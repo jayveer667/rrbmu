@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RRMU Admission Form 2026</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(135deg, rgb(10,10,30), rgb(20,20,60), rgb(0,150,200));
+}
+
+/* Form Container */
+.container{
+  width:90%;
+  max-width:500px;
+  background: rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(0,200,255,0.3);
+}
+
+/* Heading */
+.container h2{
+  text-align:center;
+  color:#fff;
+  margin-bottom:20px;
+}
+
+/* Input Fields */
+.input-box{
+  margin-bottom:15px;
+}
+
+.input-box label{
+  color:#ccc;
+  font-size:14px;
+}
+
+.input-box input,
+.input-box select{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  border:none;
+  border-radius:8px;
+  outline:none;
+  background: rgba(255,255,255,0.1);
+  color:#fff;
+}
+
+/* Button */
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background: linear-gradient(45deg, rgb(0,200,255), rgb(0,120,255));
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>RRMU Admission Form 2026</h2>
+
+  <form id="admissionForm">
+    
+    <div class="input-box">
+      <label>Full Name</label>
+      <input type="text" id="name" required>
+    </div>
+
+    <div class="input-box">
+      <label>Email</label>
+      <input type="email" id="email" required>
+    </div>
+
+    <div class="input-box">
+      <label>Phone</label>
+      <input type="tel" id="phone" required>
+    </div>
+
+    <div class="input-box">
+      <label>Course</label>
+      <select id="course" required>
+        <option value="">Select Course</option>
+        <option>BCA</option>
+        <option>BBA</option>
+        <option>BSc</option>
+        <option>MCA</option>
+      </select>
+    </div>
+
+    <div class="input-box">
+      <label>Date of Birth</label>
+      <input type="date" id="dob" required>
+    </div>
+
+    <button type="submit">Submit Application</button>
+
+  </form>
+</div>
+
+<script>
+document.getElementById("admissionForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const course = document.getElementById("course").value;
+  const dob = document.getElementById("dob").value;
+
+  if(name && email && phone && course && dob){
+    alert("✅ Admission Form Submitted Successfully!");
+
+    console.log({
+      Name: name,
+      Email: email,
+      Phone: phone,
+      Course: course,
+      DOB: dob
+    });
+
+    document.getElementById("admissionForm").reset();
+  }
+});
+</script>
+
+</body>
+</html>
